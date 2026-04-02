@@ -6,26 +6,30 @@ on:
       - main
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  # فرض استخدام Node.js 24 على runner
 
 jobs:
   deploy:
     runs-on: self-hosted
 
     steps:
+      # 1️⃣ Checkout الكود
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # 2️⃣ Install dependencies مع تجاهل peer dependency conflicts
       - name: Install dependencies
         run: |
           cd /home/manalmrbt/Desktop/projets/App-Ytech-Solutions-Commerce
-          npm install
+          npm install --legacy-peer-deps
 
+      # 3️⃣ Build التطبيق
       - name: Build app
         run: |
           cd /home/manalmrbt/Desktop/projets/App-Ytech-Solutions-Commerce
           npm run build
 
+      # 4️⃣ Restart التطبيق عبر pm2
       - name: Restart app
         run: |
           cd /home/manalmrbt/Desktop/projets/App-Ytech-Solutions-Commerce
