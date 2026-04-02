@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  # فرض استخدام Node.js 24 على runner
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   deploy:
@@ -17,20 +17,32 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2️⃣ Install dependencies مع تجاهل peer dependency conflicts
+      # 2️⃣ تنظيف الملفات القديمة وحذف lockfiles الزائدة
+      - name: Clean old files
+        run: |
+          cd /home/manalmrbt/Desktop/projets/App-Ytech-Solutions-Commerce
+          rm -rf node_modules .next
+          # حذف pnpm-lock.yaml إذا كان موجوداً (لأنك تستخدم npm)
+          rm -f pnpm-lock.yaml
+
+      # 3️⃣ Install dependencies مع حل مشكلة lightningcss
       - name: Install dependencies
         run: |
           cd /home/manalmrbt/Desktop/projets/App-Ytech-Solutions-Commerce
           npm install --legacy-peer-deps
+          # تثبيت lightningcss يدوياً للتأكد
+          npm install lightningcss --force
 
-      # 3️⃣ Build التطبيق
+      # 4️⃣ Build التطبيق مع متغير بيئة إضافي
       - name: Build app
         run: |
           cd /home/manalmrbt/Desktop/projets/App-Ytech-Solutions-Commerce
           npm run build
+        env:
+          NODE_ENV: production
 
-      # 4️⃣ Restart التطبيق عبر pm2
+      # 5️⃣ Restart التطبيق عبر pm2
       - name: Restart app
         run: |
           cd /home/manalmrbt/Desktop/projets/App-Ytech-Solutions-Commerce
-          pm2 restart app || pm2 start app
+          pm2 restart app || pm2 start npm --name "app" -- start
