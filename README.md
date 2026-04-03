@@ -1,4 +1,4 @@
-# Ytech Solutions Commerce
+# 🛍️ Ytech Solutions Commerce
 
 [![Security Score](https://img.shields.io/badge/Security-9.5%2F10-brightgreen)](./SECURITY.md)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
@@ -6,7 +6,8 @@
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![Dependencies](https://img.shields.io/badge/Dependencies-0%20Vulnerabilities-brightgreen)](#sécurité)
 
-🛍️ **Plateforme e-commerce moderne et sécurisée** construite avec Next.js 16, TypeScript et PostgreSQL. Intégration complète de paiements, authentification multi-fournisseurs, et **durcissement sécurité avancé**.
+> **Plateforme e-commerce moderne et sécurisée** construite avec Next.js 16, TypeScript et PostgreSQL. 
+> Intégration complète de paiements, authentification multi-fournisseurs, et **durcissement sécurité avancé**.
 
 ---
 
@@ -20,7 +21,9 @@
 - [🏗️ Architecture](#️-architecture)
 - [📊 Stack Technique](#-stack-technique)
 - [🔧 Développement](#-développement)
-- [📜 Licence](#-licence)
+- [📈 Améliorations Récentes](#-améliorations-récentes)
+- [🤝 Contribuer](#-contribuer)
+- [📞 Support](#-support)
 
 ---
 
@@ -112,80 +115,19 @@ Notre plateforme intègre **11 catégories de protections** pour une sécurité 
 ---
 
 ## 🚀 Démarrage rapide
-=======
-[![Security Status](https://img.shields.io/badge/Security-Score%209%2F10-green)](./SECURITY.md)
-[![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://www.typescriptlang.org/)
-
-Plateforme e-commerce moderne (Next.js App Router) avec authentification, fonctionnalités packs/devis, intégration paiement et **durcissement sécurité** (headers, rate limiting, sessions sécurisées).
-
-## Table des Matières
-
-- [Présentation](#présentation)
-- [Fonctionnalités](#fonctionnalités)
-- [Sécurité (points forts)](#sécurité-points-forts)
-- [Démarrage rapide](#démarrage-rapide)
-- [Configuration](#configuration)
-- [Licence](#licence)
-
----
-
-## Présentation
-
-Ytech Solutions Commerce est une application Next.js construite autour de :
-- **Parcours client**: commande de packs, demandes de devis, contact
-- **Authentification**: email/mot de passe + Google OAuth (NextAuth)
-- **Administration**: accès dashboard **réservé à l’admin** (`jadisara33@gmail.com`)
-
----
-
-## Fonctionnalités
-
-### Côté client
-- **Packs**: consultation + commande (y compris commandes multiples)
-- **Devis**: création et suivi des demandes
-- **Contact**: formulaire avec envoi d’emails
-- **Compte**: connexion/déconnexion + avatar (Google ou credentials)
-
-### Côté admin
-- **Dashboard**: routes `/dashboard/*` protégées (admin only)
-- **Gestion**: actions admin disponibles via routes API dédiées
-
----
-
-## Sécurité (points forts)
-
-- **Sessions sécurisées**: NextAuth (JWT) + cookies HTTPOnly/`secure` en production (`lib/auth.ts`)
-- **Contrôle d’accès serveur**: `/dashboard/*` autorisé uniquement pour `jadisara33@gmail.com` (`middleware.ts`)
-- **Durcissement HTTP**: HSTS, CSP durcie, anti-clickjacking, anti-MIME sniffing, COOP/CORP (`next.config.js` + `middleware.ts`)
-- **Rate limiting**: protections API/auth/formulaires (`middleware.ts`, `lib/api-security.ts`, `lib/rate-limiting.ts`)
-- **Chaîne de dépendances**: `npm audit --omit=dev` à **0 vulnérabilité** (prod)
-
-Pour le détail technique des protections activées, voir `SECURITY.md`.
-
----
-
-## Démarrage rapide
->>>>>>> ac1c269a487b86738bf60e20bf8ffd1d5af51d43
 
 ### 📋 Prérequis
 
 - **Node.js** 20+ et npm 9+
-<<<<<<< HEAD
 - **PostgreSQL** 15+ (ou équivalent compatible)
 - **Git** pour le version control
 - **Comptes externes** :
   - Google OAuth (Client ID/Secret)
   - Stripe (Clés de test/production)
-=======
-- **PostgreSQL** 15+ ou équivalent
-- **Git** pour le version control
->>>>>>> ac1c269a487b86738bf60e20bf8ffd1d5af51d43
 
 ### ⚡ Installation
 
 ```bash
-<<<<<<< HEAD
 # Clonage du projet
 git clone <repository-url>
 cd App-Ytech-Solutions-Commerce
@@ -345,6 +287,48 @@ src/
 
 ---
 
+## 📈 Améliorations Récentes
+
+### 🚀 **Mises à jour Majeures (Version 1.0.0)**
+
+#### 🛡️ **Sécurité Renforcée**
+- **Score sécurité 9.5/10** : Audit complet des vulnérabilités
+- **Headers HTTP avancés** : 13 headers de sécurité configurés
+- **Rate limiting multi-niveaux** : Protection contre les abus
+- **Validation Zod stricte** : Schémas de validation complets
+
+#### 🎨 **Interface Utilisateur**
+- **Design moderne** : UI/UX complètement repensée
+- **Composants shadcn/ui** : Bibliothèque de composants professionnels
+- **Animations fluides** : Framer Motion intégré
+- **Responsive design** : Optimisé mobile/desktop
+
+#### ⚡ **Performance**
+- **Next.js 16** : Dernière version avec App Router
+- **Server Components** : Optimisation côté serveur
+- **Code splitting** : Chargement optimisé
+- **Cache intelligent** : Stratégies de mise en cache avancées
+
+#### 🔧 **Développement**
+- **TypeScript strict** : Typage complet du projet
+- **ESLint Security** : 18 règles sécurité activées
+- **Tests automatisés** : Pipeline CI/CD intégré
+- **Documentation complète** : README et SECURITY.md détaillés
+
+### 🔄 **Améliorations Continues**
+
+#### 📊 **Monitoring**
+- **Sentry intégré** : Surveillance erreurs en temps réel
+- **Analytics avancés** : Tableaux de bord personnalisés
+- **Performance tracking** : Métriques détaillées
+
+#### 🌐 **Déploiement**
+- **Docker optimisé** : Images de production légères
+- **Vercel ready** : Déploiement en un clic
+- **CI/CD GitHub Actions** : Automatisation complète
+
+---
+
 ## 🔧 Développement
 
 ### 📝 **Scripts disponibles**
@@ -401,6 +385,34 @@ vercel --prod
 
 ---
 
+## 🤝 Contribuer
+
+Les contributions sont les bienvenues ! Veuillez :
+
+1. Fork le projet
+2. Créer une branche (`git checkout -b feature/amazing-feature`)
+3. Commit vos changements (`git commit -m 'Add amazing feature'`)
+4. Push vers la branche (`git push origin feature/amazing-feature`)
+5. Ouvrir une Pull Request
+
+### 📋 **Guidelines de contribution**
+
+- **Code style** : Suivre les standards ESLint + Prettier
+- **Tests** : Ajouter des tests pour les nouvelles fonctionnalités
+- **Sécurité** : Respecter les guidelines de sécurité
+- **Documentation** : Mettre à jour la documentation
+
+---
+
+## 📞 Support
+
+- **Email** : support@ytech-solutions.com
+- **Documentation** : [SECURITY.md](./SECURITY.md)
+- **Issues** : GitHub Issues
+- **Discussions** : GitHub Discussions
+
+---
+
 ## 📜 Licence
 
 Ce projet est sous licence **MIT** - voir le fichier [LICENSE](LICENSE) pour plus de détails.
@@ -423,59 +435,6 @@ Le logiciel est fourni "tel quel", sans garantie d'aucune sorte. En cas d'utilis
 
 ---
 
-## 🤝 Contribuer
-
-Les contributions sont les bienvenues ! Veuillez :
-
-1. Fork le projet
-2. Créer une branche (`git checkout -b feature/amazing-feature`)
-3. Commit vos changements (`git commit -m 'Add amazing feature'`)
-4. Push vers la branche (`git push origin feature/amazing-feature`)
-5. Ouvrir une Pull Request
-
----
-
-## 📞 Support
-
-- **Email** : support@ytech-solutions.com
-- **Documentation** : [SECURITY.md](./SECURITY.md)
-- **Issues** : GitHub Issues
-
----
-
-*Dernière mise à jour : Avril 2026*  
-*Version : 1.0.0*  
-*Plateforme : Next.js 16 + TypeScript + PostgreSQL*
-=======
-npm install
-npm run dev
-```
-
-## Configuration
-
-```bash
-# Database (PostgreSQL)
-DATABASE_URL="postgresql://user:password@localhost:5432/ecommerce"
-
-# NextAuth
-NEXTAUTH_URL="http://localhost:3000"
-NEXTAUTH_SECRET="your-secret-key-here"
-
-# OAuth Providers
-GOOGLE_CLIENT_ID="your-google-client-id"
-GOOGLE_CLIENT_SECRET="your-google-client-secret"
-
-# Stripe
-STRIPE_PUBLIC_KEY="pk_test_..."
-STRIPE_SECRET_KEY="sk_test_..."
-STRIPE_WEBHOOK_SECRET="whsec_..."
-```
-
-## Licence
-
-Ce projet est sous licence **MIT** - voir le fichier [LICENSE](LICENSE) pour plus de détails.
-
----
-
-*Dernière mise à jour : Avril 2026*
->>>>>>> ac1c269a487b86738bf60e20bf8ffd1d5af51d43
+*🚀 Dernière mise à jour : Avril 2026*  
+*📦 Version : 1.0.0*  
+*⚡ Plateforme : Next.js 16 + TypeScript + PostgreSQL*
